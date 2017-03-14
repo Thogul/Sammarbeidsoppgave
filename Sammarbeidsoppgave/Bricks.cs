@@ -2,7 +2,7 @@ using system;
 
 namespace Sammarbeidsoppgave
 {
-    class Brikker
+    class Bricks
     {
       //Attributter
       list<Image> bilder;
