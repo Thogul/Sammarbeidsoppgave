@@ -14,28 +14,23 @@ namespace Sammarbeidsoppgave
     class Bricks
     {
         //Attributter
-        List<Image> bilder;
-        int diff = 0;
-        string[] bildefolder = {"folder1", "folder2", "folder3"};
-        string[] bildene = {"bilde 1", "Bilde 2", "bilde 3"};
+        private List<Image> bilder;
+        private string[] bildefolder = {"folder1", "folder2", "folder3"};
+        private string[] pictures1 = { "bilde 1", "Bilde 2", "bilde 3" };
+        private string[] pictrues2 = { "bilde 1", "Bilde 2", "bilde 3" };
+        private string[] pictures3 = { "bilde 1", "Bilde 2", "bilde 3" };
+        private string[,] pictures = { 
+            { "bilde 1", "Bilde 2", "bilde 3" },
+            { "bilde 1", "Bilde 2", "bilde 3" },
+            { "bilde 1", "Bilde 2", "bilde 3" } };
 
 
       //Konstruktør
     public Bricks(int vanskelighetsgrad)
     {
-        diff = vanskelighetsgrad;
+        int diff = vanskelighetsgrad;
 
-        for(int i = 0; i < bilder.Count; i++){
-            //Hent bilde fra rescources spesifisert ut i fra
-            //bilder.Add(/*Nytt bilde */);
-        }
     }
-
-
-
-
-
-
 
 
     }
