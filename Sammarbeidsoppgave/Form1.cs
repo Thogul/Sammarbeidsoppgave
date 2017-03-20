@@ -16,5 +16,7 @@ namespace Sammarbeidsoppgave
         {
             InitializeComponent();
         }
+
+
     }
 }
