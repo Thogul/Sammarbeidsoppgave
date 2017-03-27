@@ -16,22 +16,26 @@ namespace Sammarbeidsoppgave
         //Attributter
         private List<Image> bilder;
         private string[] bildefolder = {"folder1", "folder2", "folder3"};
-        private string[] pictures1 = { "bilde 1", "Bilde 2", "bilde 3" };
-        private string[] pictrues2 = { "bilde 1", "Bilde 2", "bilde 3" };
-        private string[] pictures3 = { "bilde 1", "Bilde 2", "bilde 3" };
         private string[,] pictures = { 
             { "bilde 1", "Bilde 2", "bilde 3" },
             { "bilde 1", "Bilde 2", "bilde 3" },
             { "bilde 1", "Bilde 2", "bilde 3" } };
 
 
-      //Konstruktør
-    public Bricks(int vanskelighetsgrad)
-    {
-        int diff = vanskelighetsgrad;
+        //Konstruktør
+        public Bricks()
+        {
 
-    }
+        }
 
+        //metoder
+        private void push()
+        {
+            for (int i = 0; i < pictures.; i++)
+            {
+
+            }
+        }
 
     }
 }
