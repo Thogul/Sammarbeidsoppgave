@@ -16,14 +16,6 @@ namespace Sammarbeidsoppgave
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
-        
-=======
-
-
-
-
-
 
         //Optional og lettere å bruke
         private void ResetGame()
@@ -31,7 +23,5 @@ namespace Sammarbeidsoppgave
             //sette spillet til startområdet hvor den også resetter classene som trenger det
             //Brukes til startup og når man er ferdig med å spille en runde
         }
-
->>>>>>> origin/master
     }
 }
