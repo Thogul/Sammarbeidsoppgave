@@ -31,7 +31,7 @@ namespace Sammarbeidsoppgave
         //metoder
         private void push()
         {
-            for (int i = 0; i < pictures.; i++)
+            //for (int i = 0; i < pictures.; i++)
             {
 
             }
