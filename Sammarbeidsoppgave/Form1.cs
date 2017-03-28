@@ -19,6 +19,7 @@ namespace Sammarbeidsoppgave
             AddGameItems();
             ResetGame();
         }
+
         Panel menuPanel = new Panel();
         Panel questPanel = new Panel();
         PictureBox player = new PictureBox();
@@ -56,6 +57,7 @@ namespace Sammarbeidsoppgave
 
         private void AddMenuItems()
         {
+            //menuItems = new PictureBox[5];
             this.Size = new Size(1300, 763);
             this.BackColor = Color.Black;
 
@@ -93,6 +95,7 @@ namespace Sammarbeidsoppgave
 
         private void AddGameItems()
         {
+            //gameItems = new PictureBox[7];
             questPanel.Size = new Size(1280, 720);
             this.Controls.Add(questPanel);
             questPanel.Visible = false;
