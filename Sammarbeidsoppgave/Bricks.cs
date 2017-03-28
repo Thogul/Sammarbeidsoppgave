@@ -80,7 +80,7 @@ namespace Sammarbeidsoppgave
             get { return pictures; }
         }
 
-        public Array Questions
+        public Image[,] Questions
         {
             get { return questions; } 
         }
