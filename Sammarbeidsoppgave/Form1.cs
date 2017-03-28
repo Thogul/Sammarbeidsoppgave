@@ -19,6 +19,9 @@ namespace Sammarbeidsoppgave
             AddGameItems();
             ResetGame();
         }
+
+        Bricks icons = new Bricks();
+
         Panel menuPanel = new Panel();
         Panel questPanel = new Panel();
         PictureBox player = new PictureBox();
@@ -69,26 +72,31 @@ namespace Sammarbeidsoppgave
             player.Location = new Point(10, 575);
             player.Size = new Size(75, 135);
             player.BackColor = Color.Lime;
+            player.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.player);
             
             menuItems[1] = door1;
             door1.Location = new Point(500, 200);
             door1.Size = new Size(100, 180);
             door1.BackColor = Color.Brown;
+            door1.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
 
             menuItems[2] = door2;
             door2.Location = new Point(700, 300);
             door2.Size = new Size(100, 180);
             door2.BackColor = Color.Brown;
+            door2.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
 
             menuItems[3] = door3;
             door3.Location = new Point(500, 500);
             door3.Size = new Size(100, 180);
             door3.BackColor = Color.Brown;
+            door3.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
 
             menuItems[4] = doorQuit;
             doorQuit.Location = new Point(50, 150);
             doorQuit.Size = new Size(100, 180);
             doorQuit.BackColor = Color.Brown;
+            doorQuit.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.doorQuit);
         }
 
         private void AddGameItems()
@@ -101,21 +109,25 @@ namespace Sammarbeidsoppgave
             picture1.Location = new Point(1000, 10);
             picture1.Size = new Size(180, 100);
             picture1.BackColor = Color.RoyalBlue;
+            picture1.Image = new Bitmap(icons.Pictures[0]);
 
             gameItems[1] = picture2;
             picture2.Location = new Point(1000, 130);
             picture2.Size = new Size(180, 100);
             picture2.BackColor = Color.RoyalBlue;
+            picture2.Image = new Bitmap(icons.Pictures[1]);
 
             gameItems[2] = picture3;
             picture3.Location = new Point(1000, 250);
             picture3.Size = new Size(180, 100);
             picture3.BackColor = Color.RoyalBlue;
+            picture3.Image = new Bitmap(icons.Pictures[2]);
 
             gameItems[3] = picture4;
             picture4.Location = new Point(1000, 370);
             picture4.Size = new Size(180, 100);
             picture4.BackColor = Color.RoyalBlue;
+            picture4.Image = new Bitmap(icons.Pictures[3]);
 
             gameItems[4] = pictureNull1;
             pictureNull1.Location = new Point(1000, 490);
@@ -131,6 +143,7 @@ namespace Sammarbeidsoppgave
             pictureAnswer.Location = new Point(700, 610);
             pictureAnswer.Size = new Size(180, 100);
             pictureAnswer.BackColor = Color.Tomato;
+            picture4.Image = new Bitmap(icons.Questions[icons.Difficulty,icons.QuestionLvL]);
         }
     }
 }
