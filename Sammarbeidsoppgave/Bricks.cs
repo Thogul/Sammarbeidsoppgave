@@ -27,7 +27,7 @@ namespace Sammarbeidsoppgave
             { null, null, null, null },
             { null, null, null, null } };
         private Image[,] questions =  {
-            { null, null, null },
+            { Sammarbeidsoppgave.Properties.Resources.Zelda_Answer, null, null },
             { null, null, null, },
             { null, null, null, } };
         private int difficulty;
@@ -73,6 +73,7 @@ namespace Sammarbeidsoppgave
         public int QuestionLvL
         {
             get { return questionLvL; }
+            set { questionLvL = value; }
         }
 
         public List<Image> Pictures
