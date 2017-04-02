@@ -1,5 +1,7 @@
 ﻿using System;
 
+
+//Kodet av Thomas
 namespace Sammarbeidsoppgave
 {
 
