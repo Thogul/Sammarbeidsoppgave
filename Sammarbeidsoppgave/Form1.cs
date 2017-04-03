@@ -49,15 +49,15 @@ namespace Sammarbeidsoppgave
         {
             //sette spillet til startområdet hvor den også resetter classene som trenger det
             //Brukes til startup og når man er ferdig med å spille en runde
-            //menuPanel.MouseDown += Form1_MouseDown;
-            //menuPanel.MouseMove += Form1_MouseMove;
-            //menuPanel.MouseUp += Form1_MouseMove;
+            menuPanel.MouseDown += Form1_MouseDown;
+            menuPanel.MouseMove += Form1_MouseMove;
+            menuPanel.MouseUp += Form1_MouseMove;
             for (int i = 0; i < menuItems.Length; i++)
             {
                 menuPanel.Controls.Add(menuItems[i]);
-                //menuPanel.MouseDown += Form1_MouseDown;
-                //menuPanel.MouseMove += Form1_MouseMove;
-                //menuPanel.MouseUp += Form1_MouseMove;
+                menuItems[i].MouseDown += Form1_MouseDown;
+                menuItems[i].MouseMove += Form1_MouseMove;
+                menuItems[i].MouseUp += Form1_MouseUp;
 
             }
 
@@ -188,15 +188,18 @@ namespace Sammarbeidsoppgave
         //Thomas
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
-            location = Point.Empty;
-            for (int i = 0; i < menuItems.Length; i++)
+            if (e.Button == MouseButtons.Left)
             {
-                if(menuItems[i].Name == moving.Name)
+                for (int i = 0; i < menuItems.Length; i++)
                 {
-                    menuItems[i] = moving;
+                    if (menuItems[i].Name == moving.Name)
+                    {
+                        menuItems[i] = moving;
+                    }
                 }
+                location = Point.Empty;
+                moving = null;
             }
-            moving = null;
         }
     }
 }
