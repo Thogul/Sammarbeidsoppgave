@@ -30,6 +30,7 @@ namespace Sammarbeidsoppgave
         Info stats = new Info();
 
         //Kasper
+        //Legger til alle objektene vi bruker
         Panel menuPanel = new Panel();
         Panel questPanel = new Panel();
         PictureBox player = new PictureBox();
@@ -46,6 +47,7 @@ namespace Sammarbeidsoppgave
         PictureBox pictureNull2 = new PictureBox();
         PictureBox pictureAnswer = new PictureBox();
 
+        //vi bruker picturebox arrays for å bruke få linjer til å velge forskjellige bilder til objektene
         PictureBox[] menuItems = new PictureBox[5];
         PictureBox[] gameItems = new PictureBox[7];
 
@@ -57,7 +59,7 @@ namespace Sammarbeidsoppgave
         //Kasper & Thomas
         private void ResetGame ()
         {
-            //sette spillet til startområdet hvor den også resetter classene som trenger det
+            //sette spillet til startområdet hvor den også resetter klassene som trenger det
             //Brukes til startup og når man er ferdig med å spille en runde
             questPanel.MouseDown += Form1_MouseDown;
             questPanel.MouseMove += Form1_MouseMove;
@@ -79,6 +81,7 @@ namespace Sammarbeidsoppgave
         }
 
         //Kasper
+        //Legger til properties til hvert objekt, og vi gjør det i koden sånn at vi får en helt ren reset
         private void AddMenuItems()
         {
             this.Size = new Size(1300, 763);
@@ -118,7 +121,7 @@ namespace Sammarbeidsoppgave
             doorQuit.Location = new Point(50, 150);
             doorQuit.Size = new Size(100, 180);
             doorQuit.BackColor = Color.Brown;
-            doorQuit.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.doorQuit);
+            doorQuit.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door_quit);
         }
 
         //Kasper
@@ -176,6 +179,7 @@ namespace Sammarbeidsoppgave
         }
 
         //Kasper
+        //Timeren begynner når man trykker ned en knapp, slik at man kan holde knappen nede så lenge man ønsker å bevege seg
         private void onKeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -189,6 +193,7 @@ namespace Sammarbeidsoppgave
         }
 
         //Kasper
+        //Når knappen slippes stopper bevegelse
         private void onKeyUp(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -197,11 +202,13 @@ namespace Sammarbeidsoppgave
                 case Keys.Right: moveRight = false; break;
             }
 
+            //timeren stopper når ingen knapper blir brukt
             if (!(moveLeft || moveRight))
                 movementTimer.Stop();
         }
 
         //Kasper
+        //Man kan bevege seg så lenge man ikke har kollidert med noen dører
         private void movementTimer_Tick(object sender, EventArgs e)
         {
             if (Collision() == false)
@@ -210,6 +217,8 @@ namespace Sammarbeidsoppgave
             }
         }
 
+        //Kasper
+        //spilleren flytter seg med en bestemt fart i forhold til posisjonen sin
         private void Movement()
         {
             if (moveLeft)
@@ -222,6 +231,8 @@ namespace Sammarbeidsoppgave
             }
         }
 
+        //Kasper
+        //Her sjekker man om det fortsatt er mulig å bevege seg
         private bool Collision()
         {
             if ((player.Bounds.IntersectsWith(door1.Bounds)) ||
@@ -229,11 +240,12 @@ namespace Sammarbeidsoppgave
                 (player.Bounds.IntersectsWith(door3.Bounds)) ||
                 (player.Bounds.IntersectsWith(doorQuit.Bounds)))
             {
+                menuPanel.Visible = false;
+                questPanel.Visible = true;
                 return true;
             }
             else
                 return false;
-        }
         }
         
         //Thomas

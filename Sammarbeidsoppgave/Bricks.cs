@@ -28,7 +28,7 @@ namespace Sammarbeidsoppgave
             { null, null, null, null },
             { null, null, null, null } };
         private Image[,] questions =  {
-            { Sammarbeidsoppgave.Properties.Resources.Zelda_Answer, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Answer, null },
+            { Sammarbeidsoppgave.Properties.Resources.Zelda_Answer, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Answer, Sammarbeidsoppgave.Properties.Resources.League_answer },
             { null, null, null, },
             { null, null, null, } };
         private int difficulty;
