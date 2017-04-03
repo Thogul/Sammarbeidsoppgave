@@ -10,6 +10,7 @@ namespace Sammarbeidsoppgave
         private int difficulty;
         private int cleared;
         private int fails;
+        private int round;
         private bool gamestate;
         
         //Constructors
@@ -25,11 +26,15 @@ namespace Sammarbeidsoppgave
         public void Clear()
         {
             cleared++;
+            if (round < 3)
+                round++;
         }
 
         public void Fail()
         {
             fails++;
+            if (round < 3)
+                round++;
         }
 
         public void Reset()

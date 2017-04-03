@@ -118,14 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Bramble" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bramble.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bokoblin_Zelda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bokoblin Zelda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="League_answer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\League_answer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Master_sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Master sword.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Malphite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Malphite.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Rocket_Leauge_Answer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rocket Leauge Answer.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rocket_Leauge_Ball" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rocket Leauge Ball.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rocket_Leauge_Car" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rocket Leauge Car.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Zelda_Answer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Zelda Answer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

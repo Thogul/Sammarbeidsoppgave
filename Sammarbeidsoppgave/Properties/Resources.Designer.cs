@@ -63,9 +63,9 @@ namespace Sammarbeidsoppgave.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bramble {
+        internal static System.Drawing.Bitmap Bokoblin_Zelda {
             get {
-                object obj = ResourceManager.GetObject("Bramble", resourceCulture);
+                object obj = ResourceManager.GetObject("Bokoblin_Zelda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Sammarbeidsoppgave.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap League_answer {
+        internal static System.Drawing.Bitmap Master_sword {
             get {
-                object obj = ResourceManager.GetObject("League_answer", resourceCulture);
+                object obj = ResourceManager.GetObject("Master_sword", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,29 @@ namespace Sammarbeidsoppgave.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Malphite {
+        internal static System.Drawing.Bitmap Rocket_Leauge_Answer {
             get {
-                object obj = ResourceManager.GetObject("Malphite", resourceCulture);
+                object obj = ResourceManager.GetObject("Rocket_Leauge_Answer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rocket_Leauge_Ball {
+            get {
+                object obj = ResourceManager.GetObject("Rocket_Leauge_Ball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rocket_Leauge_Car {
+            get {
+                object obj = ResourceManager.GetObject("Rocket_Leauge_Car", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
