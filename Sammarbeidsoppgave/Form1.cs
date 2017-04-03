@@ -85,31 +85,31 @@ namespace Sammarbeidsoppgave
             player.Location = new Point(10, 575);
             player.Size = new Size(75, 135);
             player.BackColor = Color.Lime;
-            //player.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.player);
+            player.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.player);
             
             menuItems[1] = door1;
             door1.Location = new Point(500, 200);
             door1.Size = new Size(100, 180);
             door1.BackColor = Color.Brown;
-            //door1.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
+            door1.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
 
             menuItems[2] = door2;
             door2.Location = new Point(700, 300);
             door2.Size = new Size(100, 180);
             door2.BackColor = Color.Brown;
-            //door2.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
+            door2.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
 
             menuItems[3] = door3;
             door3.Location = new Point(500, 500);
             door3.Size = new Size(100, 180);
             door3.BackColor = Color.Brown;
-            //door3.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
+            door3.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
 
             menuItems[4] = doorQuit;
             doorQuit.Location = new Point(50, 150);
             doorQuit.Size = new Size(100, 180);
             doorQuit.BackColor = Color.Brown;
-            //doorQuit.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.doorQuit);
+            doorQuit.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.doorQuit);
         }
 
         private void AddGameItems()
@@ -122,7 +122,7 @@ namespace Sammarbeidsoppgave
             picture1.Location = new Point(1000, 10);
             picture1.Size = new Size(180, 100);
             picture1.BackColor = Color.RoyalBlue;
-            //picture1.Image = new Bitmap(icons.Pictures[0]);
+            picture1.Image = new Bitmap(icons.Pictures[0]);
 
             gameItems[1] = picture2;
             picture2.Location = new Point(1000, 130);
