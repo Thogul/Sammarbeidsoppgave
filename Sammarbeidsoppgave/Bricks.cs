@@ -17,7 +17,7 @@ namespace Sammarbeidsoppgave
         private List<Image> pictures;
         private Image[,] picture0 = {
             { Sammarbeidsoppgave.Properties.Resources.Master_sword, Sammarbeidsoppgave.Properties.Resources.Bokoblin_Zelda, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Ball, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Car },
-            { Sammarbeidsoppgave.Properties.Resources.Master_sword, Sammarbeidsoppgave.Properties.Resources.Bokoblin_Zelda, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Ball, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Car },
+            { Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Ball, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Car, Sammarbeidsoppgave.Properties.Resources.Master_sword, Sammarbeidsoppgave.Properties.Resources.Bokoblin_Zelda },
             { null, null, null, null } };
         private Image[,] picture1 = {
             { null, null, null, null },

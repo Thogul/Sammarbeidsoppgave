@@ -24,8 +24,10 @@ namespace Sammarbeidsoppgave
         //Thomas
         Point location = Point.Empty;
         PictureBox moving;
+        string answer;
 
         Bricks icons = new Bricks();
+        Info stats = new Info();
 
         Panel menuPanel = new Panel();
         Panel questPanel = new Panel();
@@ -123,23 +125,27 @@ namespace Sammarbeidsoppgave
             picture1.Size = new Size(180, 100);
             picture1.BackColor = Color.RoyalBlue;
             picture1.Image = new Bitmap(icons.Pictures[0]);
+            picture1.Tag = 1;
 
             gameItems[1] = picture2;
             picture2.Location = new Point(1000, 130);
             picture2.Size = new Size(180, 100);
             picture2.BackColor = Color.RoyalBlue;
+            picture2.Tag = 1;
             //picture2.Image = new Bitmap(icons.Pictures[1]);
 
             gameItems[2] = picture3;
             picture3.Location = new Point(1000, 250);
             picture3.Size = new Size(180, 100);
             picture3.BackColor = Color.RoyalBlue;
+            picture3.Tag = 0;
             //picture3.Image = new Bitmap(icons.Pictures[2]);
 
             gameItems[3] = picture4;
             picture4.Location = new Point(1000, 370);
             picture4.Size = new Size(180, 100);
             picture4.BackColor = Color.RoyalBlue;
+            picture4.Tag = 0;
             //picture4.Image = new Bitmap(icons.Pictures[3]);
 
             gameItems[4] = pictureNull1;
@@ -198,7 +204,20 @@ namespace Sammarbeidsoppgave
                     if (gameItems[i].Name == moving.Name)
                     {
                         gameItems[i] = moving;
+                        if ((gameItems[i].Bounds.IntersectsWith(pictureNull1.Bounds) || gameItems[i].Bounds.IntersectsWith(pictureNull2.Bounds)))
+                        {
+                            answer += gameItems[i].Tag;
+                        }
                     }
+                }
+                //om begge bildene er riktig blir stingen 11, om ikke så blir det ikke 11.
+                if(answer == "11")
+                {
+                    stats.Clear();
+                }
+                else
+                {
+                    stats.Fail();
                 }
                 location = Point.Empty;
                 moving = null;
