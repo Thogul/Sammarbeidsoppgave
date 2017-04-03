@@ -45,25 +45,27 @@ namespace Sammarbeidsoppgave
         PictureBox[] menuItems = new PictureBox[5];
         PictureBox[] gameItems = new PictureBox[7];
 
+        //Kapser & Thomas
         private void ResetGame ()
         {
             //sette spillet til startområdet hvor den også resetter classene som trenger det
             //Brukes til startup og når man er ferdig med å spille en runde
-            menuPanel.MouseDown += Form1_MouseDown;
-            menuPanel.MouseMove += Form1_MouseMove;
-            menuPanel.MouseUp += Form1_MouseMove;
+            questPanel.MouseDown += Form1_MouseDown;
+            questPanel.MouseMove += Form1_MouseMove;
+            questPanel.MouseUp += Form1_MouseMove;
+
             for (int i = 0; i < menuItems.Length; i++)
             {
                 menuPanel.Controls.Add(menuItems[i]);
-                menuItems[i].MouseDown += Form1_MouseDown;
-                menuItems[i].MouseMove += Form1_MouseMove;
-                menuItems[i].MouseUp += Form1_MouseUp;
 
             }
 
             for (int i = 0; i < gameItems.Length; i++)
             {
                 questPanel.Controls.Add(gameItems[i]);
+                gameItems[i].MouseDown += Form1_MouseDown;
+                gameItems[i].MouseMove += Form1_MouseMove;
+                gameItems[i].MouseUp += Form1_MouseUp;
             }
         }
 
@@ -164,7 +166,7 @@ namespace Sammarbeidsoppgave
             {
                 for (int i = 0; i < menuItems.Length; i++)
                 {
-                    if (sender == menuItems[i])
+                    if (sender == gameItems[i])
                     {
                         location = new Point(e.X, e.Y);
                         moving = menuItems[i];
@@ -192,9 +194,9 @@ namespace Sammarbeidsoppgave
             {
                 for (int i = 0; i < menuItems.Length; i++)
                 {
-                    if (menuItems[i].Name == moving.Name)
+                    if (gameItems[i].Name == moving.Name)
                     {
-                        menuItems[i] = moving;
+                        gameItems[i] = moving;
                     }
                 }
                 location = Point.Empty;
