@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//kodet av kasper
 namespace Sammarbeidsoppgave
 {
     public partial class Form1 : Form
     {
+        //Kasper
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +27,7 @@ namespace Sammarbeidsoppgave
 
         Bricks icons = new Bricks();
 
+        //Kasper
         Panel menuPanel = new Panel();
         Panel questPanel = new Panel();
         PictureBox player = new PictureBox();
@@ -46,7 +47,12 @@ namespace Sammarbeidsoppgave
         PictureBox[] menuItems = new PictureBox[5];
         PictureBox[] gameItems = new PictureBox[7];
 
-        //Kapser & Thomas
+        bool moveRight = false;
+        bool moveLeft = false;
+        int speed = 3;
+        
+
+        //Kasper & Thomas
         private void ResetGame ()
         {
             //sette spillet til startområdet hvor den også resetter classene som trenger det
@@ -70,6 +76,7 @@ namespace Sammarbeidsoppgave
             }
         }
 
+        //Kasper
         private void AddMenuItems()
         {
             this.Size = new Size(1300, 763);
@@ -112,6 +119,7 @@ namespace Sammarbeidsoppgave
             doorQuit.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.doorQuit);
         }
 
+        //Kasper
         private void AddGameItems()
         {
             questPanel.Size = new Size(1280, 720);
@@ -128,19 +136,19 @@ namespace Sammarbeidsoppgave
             picture2.Location = new Point(1000, 130);
             picture2.Size = new Size(180, 100);
             picture2.BackColor = Color.RoyalBlue;
-            //picture2.Image = new Bitmap(icons.Pictures[1]);
+            picture2.Image = new Bitmap(icons.Pictures[1]);
 
             gameItems[2] = picture3;
             picture3.Location = new Point(1000, 250);
             picture3.Size = new Size(180, 100);
             picture3.BackColor = Color.RoyalBlue;
-            //picture3.Image = new Bitmap(icons.Pictures[2]);
+            picture3.Image = new Bitmap(icons.Pictures[2]);
 
             gameItems[3] = picture4;
             picture4.Location = new Point(1000, 370);
             picture4.Size = new Size(180, 100);
             picture4.BackColor = Color.RoyalBlue;
-            //picture4.Image = new Bitmap(icons.Pictures[3]);
+            picture4.Image = new Bitmap(icons.Pictures[3]);
 
             gameItems[4] = pictureNull1;
             pictureNull1.Location = new Point(1000, 490);
@@ -159,6 +167,67 @@ namespace Sammarbeidsoppgave
             picture4.Image = new Bitmap(icons.Questions[icons.Difficulty,icons.QuestionLvL]);
         }
 
+        //Kasper
+        private void onKeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left: moveLeft = true; break;
+                case Keys.Right: moveRight = true; break;
+            }
+
+            if (moveLeft || moveRight)
+                movementTimer.Start();
+        }
+
+        //Kasper
+        private void onKeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left: moveLeft = false; break;
+                case Keys.Right: moveRight = false; break;
+            }
+
+            if (!(moveLeft || moveRight))
+                movementTimer.Stop();
+        }
+
+        //Kasper
+        private void movementTimer_Tick(object sender, EventArgs e)
+        {
+            if (Collision() == false)
+            {
+                Movement();
+            }
+        }
+
+        private void Movement()
+        {
+            if (moveLeft)
+            {
+                player.Location = new Point(player.Location.X - speed, player.Location.Y);
+            }
+            if (moveRight)
+            {
+                player.Location = new Point(player.Location.X + speed, player.Location.Y);
+            }
+        }
+
+        private bool Collision()
+        {
+            if ((player.Bounds.IntersectsWith(door1.Bounds)) ||
+                (player.Bounds.IntersectsWith(door2.Bounds)) ||
+                (player.Bounds.IntersectsWith(door3.Bounds)) ||
+                (player.Bounds.IntersectsWith(doorQuit.Bounds)))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+        }
+        
         //Thomas
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {

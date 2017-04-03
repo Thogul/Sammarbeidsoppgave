@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.movementTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // movementTimer
+            // 
+            this.movementTimer.Interval = 20;
+            this.movementTimer.Tick += new System.EventHandler(this.movementTimer_Tick);
             // 
             // Form1
             // 
@@ -37,14 +44,15 @@
             this.ClientSize = new System.Drawing.Size(944, 441);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onKeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.onKeyUp);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer movementTimer;
     }
 }
 
