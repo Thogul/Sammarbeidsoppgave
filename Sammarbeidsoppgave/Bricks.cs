@@ -16,8 +16,8 @@ namespace Sammarbeidsoppgave
         //Attributter
         private List<Image> pictures;
         private Image[,] picture0 = {
-            { null, null, null, null },
-            { null, null, null, null },
+            { Sammarbeidsoppgave.Properties.Resources.Master_sword, Sammarbeidsoppgave.Properties.Resources.Bokoblin_Zelda, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Ball, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Car },
+            { Sammarbeidsoppgave.Properties.Resources.Master_sword, Sammarbeidsoppgave.Properties.Resources.Bokoblin_Zelda, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Ball, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Car },
             { null, null, null, null } };
         private Image[,] picture1 = {
             { null, null, null, null },
@@ -28,7 +28,7 @@ namespace Sammarbeidsoppgave
             { null, null, null, null },
             { null, null, null, null } };
         private Image[,] questions =  {
-            { Sammarbeidsoppgave.Properties.Resources.Zelda_Answer, null, null },
+            { Sammarbeidsoppgave.Properties.Resources.Zelda_Answer, Sammarbeidsoppgave.Properties.Resources.Rocket_Leauge_Answer, null },
             { null, null, null, },
             { null, null, null, } };
         private int difficulty;
