@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//kodet av kasper
 namespace Sammarbeidsoppgave
 {
     public partial class Form1 : Form
@@ -29,6 +28,7 @@ namespace Sammarbeidsoppgave
         Bricks icons = new Bricks();
         Info stats = new Info();
 
+        //Kasper
         Panel menuPanel = new Panel();
         Panel questPanel = new Panel();
         PictureBox player = new PictureBox();
