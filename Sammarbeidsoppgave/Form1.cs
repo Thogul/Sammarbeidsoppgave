@@ -20,6 +20,10 @@ namespace Sammarbeidsoppgave
             ResetGame();
         }
 
+        //Thomas
+        Point location = Point.Empty;
+        PictureBox moving;
+
         Bricks icons = new Bricks();
 
         Panel menuPanel = new Panel();
@@ -41,14 +45,20 @@ namespace Sammarbeidsoppgave
         PictureBox[] menuItems = new PictureBox[5];
         PictureBox[] gameItems = new PictureBox[7];
 
-        //Optional og lettere å bruke
         private void ResetGame ()
         {
             //sette spillet til startområdet hvor den også resetter classene som trenger det
             //Brukes til startup og når man er ferdig med å spille en runde
+            //menuPanel.MouseDown += Form1_MouseDown;
+            //menuPanel.MouseMove += Form1_MouseMove;
+            //menuPanel.MouseUp += Form1_MouseMove;
             for (int i = 0; i < menuItems.Length; i++)
             {
                 menuPanel.Controls.Add(menuItems[i]);
+                //menuPanel.MouseDown += Form1_MouseDown;
+                //menuPanel.MouseMove += Form1_MouseMove;
+                //menuPanel.MouseUp += Form1_MouseMove;
+
             }
 
             for (int i = 0; i < gameItems.Length; i++)
@@ -72,31 +82,31 @@ namespace Sammarbeidsoppgave
             player.Location = new Point(10, 575);
             player.Size = new Size(75, 135);
             player.BackColor = Color.Lime;
-            player.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.player);
+            //player.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.player);
             
             menuItems[1] = door1;
             door1.Location = new Point(500, 200);
             door1.Size = new Size(100, 180);
             door1.BackColor = Color.Brown;
-            door1.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
+            //door1.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
 
             menuItems[2] = door2;
             door2.Location = new Point(700, 300);
             door2.Size = new Size(100, 180);
             door2.BackColor = Color.Brown;
-            door2.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
+            //door2.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
 
             menuItems[3] = door3;
             door3.Location = new Point(500, 500);
             door3.Size = new Size(100, 180);
             door3.BackColor = Color.Brown;
-            door3.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
+            //door3.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
 
             menuItems[4] = doorQuit;
             doorQuit.Location = new Point(50, 150);
             doorQuit.Size = new Size(100, 180);
             doorQuit.BackColor = Color.Brown;
-            doorQuit.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.doorQuit);
+            //doorQuit.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.doorQuit);
         }
 
         private void AddGameItems()
@@ -109,25 +119,25 @@ namespace Sammarbeidsoppgave
             picture1.Location = new Point(1000, 10);
             picture1.Size = new Size(180, 100);
             picture1.BackColor = Color.RoyalBlue;
-            picture1.Image = new Bitmap(icons.Pictures[0]);
+            //picture1.Image = new Bitmap(icons.Pictures[0]);
 
             gameItems[1] = picture2;
             picture2.Location = new Point(1000, 130);
             picture2.Size = new Size(180, 100);
             picture2.BackColor = Color.RoyalBlue;
-            picture2.Image = new Bitmap(icons.Pictures[1]);
+            //picture2.Image = new Bitmap(icons.Pictures[1]);
 
             gameItems[2] = picture3;
             picture3.Location = new Point(1000, 250);
             picture3.Size = new Size(180, 100);
             picture3.BackColor = Color.RoyalBlue;
-            picture3.Image = new Bitmap(icons.Pictures[2]);
+            //picture3.Image = new Bitmap(icons.Pictures[2]);
 
             gameItems[3] = picture4;
             picture4.Location = new Point(1000, 370);
             picture4.Size = new Size(180, 100);
             picture4.BackColor = Color.RoyalBlue;
-            picture4.Image = new Bitmap(icons.Pictures[3]);
+            //picture4.Image = new Bitmap(icons.Pictures[3]);
 
             gameItems[4] = pictureNull1;
             pictureNull1.Location = new Point(1000, 490);
@@ -144,6 +154,49 @@ namespace Sammarbeidsoppgave
             pictureAnswer.Size = new Size(180, 100);
             pictureAnswer.BackColor = Color.Tomato;
             picture4.Image = new Bitmap(icons.Questions[icons.Difficulty,icons.QuestionLvL]);
+        }
+
+        //Thomas
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            //PictureBox pb = sender as PictureBox;
+            if (e.Button == MouseButtons.Left)
+            {
+                for (int i = 0; i < menuItems.Length; i++)
+                {
+                    if (sender == menuItems[i])
+                    {
+                        location = new Point(e.X, e.Y);
+                        moving = menuItems[i];
+                    }
+                }
+            }
+        }
+
+        //Thomas
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (location != Point.Empty)
+            {
+                Point newlocation = moving.Location;
+                newlocation.X += e.X - location.X;
+                newlocation.Y += e.Y - location.Y;
+                moving.Location = newlocation;
+            }
+        }
+
+        //Thomas
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            location = Point.Empty;
+            for (int i = 0; i < menuItems.Length; i++)
+            {
+                if(menuItems[i].Name == moving.Name)
+                {
+                    menuItems[i] = moving;
+                }
+            }
+            moving = null;
         }
     }
 }

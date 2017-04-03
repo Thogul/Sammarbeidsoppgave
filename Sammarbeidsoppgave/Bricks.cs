@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//kodet av Thomas
+//Thomas
 namespace Sammarbeidsoppgave
 {
     class Bricks

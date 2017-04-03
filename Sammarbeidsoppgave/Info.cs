@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-//Kodet av Thomas
+//Thomas
 namespace Sammarbeidsoppgave
 {
 
@@ -10,6 +10,7 @@ namespace Sammarbeidsoppgave
         private int difficulty;
         private int cleared;
         private int fails;
+        private bool gamestate;
         
         //Constructors
         public Info()
@@ -17,6 +18,7 @@ namespace Sammarbeidsoppgave
             difficulty = 0;
             cleared = 0;
             fails = 0;
+            gamestate = false;
         }
 
         //Methods
@@ -34,6 +36,10 @@ namespace Sammarbeidsoppgave
         {
             difficulty = 0;
             fails = 0;
+        }
+        public void Gamestate()
+        {
+            gamestate = !gamestate;
         }
 
         //Accessors
