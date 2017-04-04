@@ -65,6 +65,7 @@ namespace Sammarbeidsoppgave
                 }
         }
 
+        //Get set metoder
         public int Difficulty
         {
             get { return difficulty; }

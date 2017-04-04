@@ -297,6 +297,8 @@ namespace Sammarbeidsoppgave
                 if(answer == "11")
                 {
                     stats.Clear();
+                    icons.QuestionLvL = stats.Round;
+                    icons.push();
                 }
                 else
                 {

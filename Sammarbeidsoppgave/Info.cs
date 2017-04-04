@@ -63,5 +63,10 @@ namespace Sammarbeidsoppgave
         {
             get { return fails; }
         }
+
+        public int Round
+        {
+            get { return round; }
+        }
     }
 }
