@@ -17,12 +17,13 @@ namespace Sammarbeidsoppgave
         {
             InitializeComponent();
             AddMenuItems();
+            AddGameItems();
             ResetGame();
         }
 
         //Thomas
         Point location = Point.Empty;
-        PictureBox moving;
+        int moving;
         string answer;
 
         Bricks icons = new Bricks();
@@ -125,6 +126,7 @@ namespace Sammarbeidsoppgave
         //Kasper
         private void AddGameItems()
         {
+            icons.push();
             questPanel.Size = new Size(1280, 720);
             this.Controls.Add(questPanel);
             questPanel.Visible = false;
@@ -240,8 +242,6 @@ namespace Sammarbeidsoppgave
                 menuPanel.Visible = false;
                 questPanel.Visible = true;
                 //gjør klar spillet først når man har aktivert en dør
-                icons.push();
-                AddGameItems();
                 return true;
             }
             else
@@ -259,7 +259,7 @@ namespace Sammarbeidsoppgave
                     if (sender == gameItems[i])
                     {
                         location = new Point(e.X, e.Y);
-                        moving = menuItems[i];
+                        moving = i;
                     }
                 }
             }
@@ -270,10 +270,10 @@ namespace Sammarbeidsoppgave
         {
             if (location != Point.Empty)
             {
-                Point newlocation = moving.Location;
+                Point newlocation = gameItems[moving].Location;
                 newlocation.X += e.X - location.X;
                 newlocation.Y += e.Y - location.Y;
-                moving.Location = newlocation;
+                gameItems[moving].Location = newlocation;
             }
         }
 
@@ -284,9 +284,8 @@ namespace Sammarbeidsoppgave
             {
                 for (int i = 0; i < menuItems.Length; i++)
                 {
-                    if (gameItems[i].Name == moving.Name)
+                    if (gameItems[i].Name == gameItems[moving].Name)
                     {
-                        gameItems[i] = moving;
                         if ((gameItems[i].Bounds.IntersectsWith(pictureNull1.Bounds) || gameItems[i].Bounds.IntersectsWith(pictureNull2.Bounds)))
                         {
                             answer += gameItems[i].Tag;
@@ -305,7 +304,7 @@ namespace Sammarbeidsoppgave
                     stats.Fail();
                 }
                 location = Point.Empty;
-                moving = null;
+                moving = 0;
             }
         }
     }
