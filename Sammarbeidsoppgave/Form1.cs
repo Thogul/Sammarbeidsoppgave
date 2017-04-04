@@ -17,7 +17,6 @@ namespace Sammarbeidsoppgave
         {
             InitializeComponent();
             AddMenuItems();
-            AddGameItems();
             ResetGame();
         }
 
@@ -91,37 +90,36 @@ namespace Sammarbeidsoppgave
             this.Controls.Add(menuPanel);
             menuPanel.Location = new Point(2, 2);
             menuPanel.Visible = true;
-            menuPanel.BackColor = Color.White;
             
             menuItems[0] = player;
             player.Location = new Point(10, 575);
             player.Size = new Size(75, 135);
-            player.BackColor = Color.Lime;
             player.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.player);
+            player.SizeMode = PictureBoxSizeMode.StretchImage;
             
             menuItems[1] = door1;
             door1.Location = new Point(500, 200);
             door1.Size = new Size(100, 180);
-            door1.BackColor = Color.Brown;
             door1.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
+            door1.SizeMode = PictureBoxSizeMode.StretchImage;
 
             menuItems[2] = door2;
             door2.Location = new Point(700, 300);
             door2.Size = new Size(100, 180);
-            door2.BackColor = Color.Brown;
             door2.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
+            door2.SizeMode = PictureBoxSizeMode.StretchImage;
 
             menuItems[3] = door3;
             door3.Location = new Point(500, 500);
             door3.Size = new Size(100, 180);
-            door3.BackColor = Color.Brown;
             door3.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door);
+            door3.SizeMode = PictureBoxSizeMode.StretchImage;
 
             menuItems[4] = doorQuit;
             doorQuit.Location = new Point(50, 150);
             doorQuit.Size = new Size(100, 180);
-            doorQuit.BackColor = Color.Brown;
             doorQuit.Image = new Bitmap(Sammarbeidsoppgave.Properties.Resources.door_quit);
+            doorQuit.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         //Kasper
@@ -134,48 +132,47 @@ namespace Sammarbeidsoppgave
             gameItems[0] = picture1;
             picture1.Location = new Point(1000, 10);
             picture1.Size = new Size(180, 100);
-            picture1.BackColor = Color.RoyalBlue;
             picture1.Image = new Bitmap(icons.Pictures[0]);
             picture1.Tag = 1;
+            picture1.SizeMode = PictureBoxSizeMode.StretchImage;
 
             gameItems[1] = picture2;
             picture2.Location = new Point(1000, 130);
             picture2.Size = new Size(180, 100);
-            picture2.BackColor = Color.RoyalBlue;
             picture2.Image = new Bitmap(icons.Pictures[1]);
             picture2.Tag = 1;
             picture2.Image = new Bitmap(icons.Pictures[1]);
+            picture2.SizeMode = PictureBoxSizeMode.StretchImage;
 
             gameItems[2] = picture3;
             picture3.Location = new Point(1000, 250);
             picture3.Size = new Size(180, 100);
-            picture3.BackColor = Color.RoyalBlue;
             picture3.Image = new Bitmap(icons.Pictures[2]);
             picture3.Tag = 0;
             picture3.Image = new Bitmap(icons.Pictures[2]);
+            picture3.SizeMode = PictureBoxSizeMode.StretchImage;
+
             gameItems[3] = picture4;
             picture4.Location = new Point(1000, 370);
             picture4.Size = new Size(180, 100);
-            picture4.BackColor = Color.RoyalBlue;
             picture4.Image = new Bitmap(icons.Pictures[3]);
             picture4.Tag = 0;
             picture4.Image = new Bitmap(icons.Pictures[3]);
+            picture4.SizeMode = PictureBoxSizeMode.StretchImage;
 
             gameItems[4] = pictureNull1;
             pictureNull1.Location = new Point(1000, 490);
             pictureNull1.Size = new Size(180, 100);
-            pictureNull1.BackColor = Color.Tomato;
 
             gameItems[5] = pictureNull2;
             pictureNull2.Location = new Point(1000, 610);
             pictureNull2.Size = new Size(180, 100);
-            pictureNull2.BackColor = Color.Tomato;
 
             gameItems[6] = pictureAnswer;
             pictureAnswer.Location = new Point(700, 610);
             pictureAnswer.Size = new Size(180, 100);
-            pictureAnswer.BackColor = Color.Tomato;
-            picture4.Image = new Bitmap(icons.Questions[icons.Difficulty,icons.QuestionLvL]);
+            pictureAnswer.Image = new Bitmap(icons.Questions[icons.Difficulty,icons.QuestionLvL]);
+            pictureAnswer.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         //Kasper
@@ -242,6 +239,9 @@ namespace Sammarbeidsoppgave
             {
                 menuPanel.Visible = false;
                 questPanel.Visible = true;
+                //gjør klar spillet først når man har aktivert en dør
+                icons.push();
+                AddGameItems();
                 return true;
             }
             else
